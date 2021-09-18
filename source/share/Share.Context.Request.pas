@@ -54,7 +54,9 @@ implementation
 
 constructor TContextRequest.Create(const AHttpMethod: string);
 begin
-  FHttp_version := 'HTTP/1.0';
+  FUrl := TContextRequestURL.Create;
+  FSocket := TContextRequestSocket.Create;
+  FHttp_version := 'HTTP/1.1';
   FMethod := AHttpMethod;
 end;
 
